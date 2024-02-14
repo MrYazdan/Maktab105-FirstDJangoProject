@@ -1,0 +1,41 @@
+{% block content %}
+    <div class="">
+        {% include "Main/Base.html" %}
+        <div class="bg-gradient-to-r from-indigo-500  shadow-md px-8 pt-6 pb-8 mb-4">
+            <h1 class="text-5xl mb-4 ">Music Counts</h1>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="flex items-center">
+                    <p class="font-bold mr-2">Name:</p>
+                    <ul>{% for title_count in title_counts %}
+                        <li><u>{{ title_count.name }} </u>:<b> {{ title_count.count }}</b></li>
+                    {% endfor %}</ul>
+                    <br><br><br><br><br>
+                </div>
+                <div class="flex items-center">
+                    <p class="font-bold mr-2 ">Url:</p>
+                    <ul>{% for artist_count in artist_counts %}
+                        <li><u>{{ artist_count.url }} </u>:<b> {{ artist_count.count }}</b></li> </b>
+                    {% endfor %}</ul>
+                </div>
+                <div class="flex items-center">
+                    <p class="font-bold mr-2">Cover:</p>
+                    <ul>{% for album_count in album_counts %}
+                        <li><u>{{ album_count.cover }}</u>:<b> {{ album_count.count }}</b>
+                        <li>
+                    {% endfor %}</ul>
+                </div>
+                <div class="flex items-center">
+                    <p class="font-bold mr-2">Category:</p>
+                    <ul>{% for category_count in category_counts %}
+                        <li><u>{{ category_count.category }} </u>:<b> {{ category_count.count }}</b></li>
+                    {% endfor %}</ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}
+
+{% include "includes/foot.html" %}
